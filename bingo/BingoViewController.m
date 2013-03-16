@@ -23,7 +23,7 @@
         // Custom initialization
         
         BingoBalls = [[NSMutableArray alloc] init];
-        
+              
     }
     return self;
 }
@@ -32,6 +32,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [BingoBallLabel setText:@""];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,10 +50,10 @@
     
     bool isNewNumber = false;
     int NewBingoBall = 0;
+        int failCounter = 0;
     
     
-    
-    while (!isNewNumber)
+    while (!isNewNumber && failCounter < 76)
     {
         NewBingoBall = (rand() % 75) + 1;
         NSLog(@"Testing New Number: %i", NewBingoBall);
@@ -81,6 +83,7 @@
         else
         {
             NSLog(@"Number Exists");
+            failCounter++;
         }
     }
     
@@ -98,7 +101,7 @@
             letter =  [[NSString alloc] initWithFormat:@"N%i", NewBingoBall ];
             break;
         case 46 ... 60:
-            letter =  [[NSString alloc] initWithFormat:@"N%i", NewBingoBall ];
+            letter =  [[NSString alloc] initWithFormat:@"G%i", NewBingoBall ];
             break;
         case 61 ... 75:
             letter =  [[NSString alloc] initWithFormat:@"O%i", NewBingoBall ];
@@ -125,10 +128,14 @@
         
         label.font = [UIFont fontWithName:@"Helvetica" size:17];
         label.textColor = [UIColor grayColor];
+        [BingoBallLabel setText:@""];
 
         
         
     }
+    
+    [BingoBalls removeAllObjects];
+    
     
     
 }
