@@ -28,7 +28,7 @@
 
 - (IBAction)PostButtonClick:(id)sender {
     
-    NSString *url = @"http://192.168.1.77:8124/?cmd=allgames";
+    NSString *url = @"http://bingo.humboldttechgroup.com:1111/?cmd=allgames";
     [self postDataWithUrl:url withPostBody:@""];
 }
 
@@ -63,7 +63,7 @@
     
      NSLog(@"POST BODY:%@", postBody);
 
-    NSString *url = @"http://192.168.1.77:8124/?cmd=createuser";
+    NSString *url = @"http://bingo.humboldttechgroup.com:1111/?cmd=createuser";
     [self postDataWithUrl:url withPostBody:postBody];
 
 }
@@ -86,7 +86,7 @@
     [postBody appendString:@"}  "];
     
     NSLog(@"POST BODY:%@", postBody);
-    NSString *url = @"http://192.168.1.77:8124/?cmd=joingame";
+    NSString *url = @"http://bingo.humboldttechgroup.com:1111/?cmd=joingame";
     [self postDataWithUrl:url withPostBody:postBody];
 
     
@@ -148,7 +148,7 @@
 
     
     NSLog(@"POST BODY:%@", postBody);
-    NSString *url = @"http://192.168.1.77:8124/?cmd=getnumber";
+    NSString *url = @"http://bingo.humboldttechgroup.com:1111/?cmd=getnumber";
     [self postDataWithUrl:url withPostBody:postBody];
     
 }
@@ -157,7 +157,7 @@
     
     
     
-    NSString *url = @"http://192.168.1.77:8124/?cmd=allusers";
+    NSString *url = @"http://bingo.humboldttechgroup.com:1111/?cmd=allusers";
     [self postDataWithUrl:url withPostBody:@""];
     
 }
