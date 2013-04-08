@@ -25,5 +25,6 @@
 - (IBAction)CreateUserClick:(id)sender;
 - (IBAction)JoinGameClick:(id)sender;
 - (IBAction)GetNumberClick:(id)sender;
+- (IBAction)AllUsersClick:(id)sender;
 
 @end

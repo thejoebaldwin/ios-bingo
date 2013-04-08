@@ -152,4 +152,13 @@
     [self postDataWithUrl:url withPostBody:postBody];
     
 }
+
+- (IBAction)AllUsersClick:(id)sender {
+    
+    
+    
+    NSString *url = @"http://192.168.1.77:8124/?cmd=allusers";
+    [self postDataWithUrl:url withPostBody:@""];
+    
+}
 @end
