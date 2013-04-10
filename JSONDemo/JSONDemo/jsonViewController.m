@@ -155,10 +155,25 @@
 
 - (IBAction)AllUsersClick:(id)sender {
     
+    NSString *timestamp = [self getTimestamp];
+    //where we build it
+    NSMutableString *postBody = [[NSMutableString alloc] init];
+
+    [postBody appendString:@"{  "];
+    [postBody appendFormat:@"\"timestamp\": \"%@\",", timestamp];
+    //[postBody appendFormat:@"\"lastchecked\": \"%@\",", timestamp];
+    [postBody appendFormat:@"\"game_id\": \"%i\"", 0];
+    //[postBody appendFormat:@"\"login\": \"%@\"", _login];
+    //close brace for outside json
+    [postBody appendString:@"}  "];
+    
+    
+    NSLog(@"POST BODY:%@", postBody);
+
     
     
     NSString *url = @"http://bingo.humboldttechgroup.com:1111/?cmd=allusers";
-    [self postDataWithUrl:url withPostBody:@""];
+    [self postDataWithUrl:url withPostBody:postBody];
     
 }
 @end
