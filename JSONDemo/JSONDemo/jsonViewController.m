@@ -55,9 +55,11 @@
     [postBody appendString:@"{  "];
     [postBody appendFormat:@"\"timestamp\": \"%@\",", timestamp];
     //opening brace for light element
-    _login = [self RandomUserName];
+    //_login = [self RandomUserName];
+    //_user_id = @"0";
+    _login = @"bingobarian";
     [postBody appendFormat:@"\"login\": \"%@\"", _login];
-
+    _user_id = @"1";
      //close brace for outside json
     [postBody appendString:@"}  "];
     
@@ -77,10 +79,11 @@
     //where we build it
     [postBody appendString:@"{  "];
     [postBody appendFormat:@"\"timestamp\": \"%@\",", timestamp];
-    [postBody appendFormat:@"\"game_id\": \"%i\",", 0];
+    [postBody appendFormat:@"\"game_id\": \"%i\",", 1];
 
     //opening brace for light element
-    [postBody appendFormat:@"\"login\": \"%@\"", _login];
+    
+    [postBody appendFormat:@"\"user_id\": \"%@\"", _user_id];
     
     //close brace for outside json
     [postBody appendString:@"}  "];
@@ -140,9 +143,8 @@
     //where we build it
     [postBody appendString:@"{  "];
     [postBody appendFormat:@"\"timestamp\": \"%@\",", timestamp];
-    [postBody appendFormat:@"\"lastchecked\": \"%@\",", timestamp];
-    [postBody appendFormat:@"\"game_id\": \"%i\",", 0];
-    [postBody appendFormat:@"\"login\": \"%@\"", _login];
+    [postBody appendFormat:@"\"game_id\": \"%i\",", 1];
+    [postBody appendFormat:@"\"user_id\": \"%@\"", _user_id];
     //close brace for outside json
     [postBody appendString:@"}  "];
 
@@ -162,7 +164,7 @@
     [postBody appendString:@"{  "];
     [postBody appendFormat:@"\"timestamp\": \"%@\",", timestamp];
     //[postBody appendFormat:@"\"lastchecked\": \"%@\",", timestamp];
-    [postBody appendFormat:@"\"game_id\": \"%i\"", 0];
+    [postBody appendFormat:@"\"game_id\": \"%i\"", 1];
     //[postBody appendFormat:@"\"login\": \"%@\"", _login];
     //close brace for outside json
     [postBody appendString:@"}  "];

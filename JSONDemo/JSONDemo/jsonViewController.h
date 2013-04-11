@@ -14,6 +14,7 @@
     NSMutableData *_httpData;
     bool isSwitch1;
     NSString *_login;
+    NSString *_user_id;
     
     
 }
