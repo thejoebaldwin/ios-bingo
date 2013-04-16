@@ -178,4 +178,30 @@
     [self postDataWithUrl:url withPostBody:postBody];
     
 }
+
+- (IBAction)QuitButtonClick:(id)sender {
+    
+    
+    
+    NSMutableString *postBody = [[NSMutableString alloc] init];
+    
+    NSString *timestamp = [self getTimestamp];
+    //where we build it
+    [postBody appendString:@"{  "];
+    [postBody appendFormat:@"\"timestamp\": \"%@\",", timestamp];
+    [postBody appendFormat:@"\"game_id\": \"%i\",", 1];
+    
+    //opening brace for light element
+    
+    [postBody appendFormat:@"\"user_id\": \"%@\"", _user_id];
+    
+    //close brace for outside json
+    [postBody appendString:@"}  "];
+    
+    NSLog(@"POST BODY:%@", postBody);
+    NSString *url = @"http://bingo.humboldttechgroup.com:1111/?cmd=quitgame";
+    [self postDataWithUrl:url withPostBody:postBody];
+
+    
+}
 @end

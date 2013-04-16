@@ -28,4 +28,6 @@
 - (IBAction)GetNumberClick:(id)sender;
 - (IBAction)AllUsersClick:(id)sender;
 
+- (IBAction)QuitButtonClick:(id)sender;
+
 @end
